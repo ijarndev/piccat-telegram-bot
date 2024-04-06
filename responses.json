@@ -1,0 +1,18 @@
+[
+    {
+        "key": "bot_init",
+        "value": "¡Hola! Bienvenido a Piccat Bot 😺, aquí están los comandos disponibles: \n\n/cat - Obtén una fotogato aleatoria :D\n/usd - Te dice el precio del USD ¿Por qué no?\n\nSi encuentras algún error se lo dices al cara de pinga de @biskuik que él lo arregla, yo soy un bot, la verdad no puedo hacer nada al respecto, tqm."
+    },
+    {
+        "key": "bot_image_sent",
+        "value": "😺 ¡Mira lo que encontré!"
+    },
+    {
+        "key": "bot_unknown_command",
+        "value": "😿 Lo siento, no conozco ese comando. Si te gustaría una nueva funcionalida puedes sugerírselo a @biskuik ☝🤓"
+    },
+    {
+        "key": "bot_searching_image",
+        "value": "🔍🐈 Buscando fotogato."
+    }
+]
