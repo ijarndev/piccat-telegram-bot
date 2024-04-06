@@ -14,5 +14,9 @@
     {
         "key": "bot_searching_image",
         "value": "🔍🐈 Buscando fotogato..."
+    },
+    {
+        "key": "bot_wait",
+        "value": "🔎🐈 Voy pa' ti, dame un chance."
     }
 ]

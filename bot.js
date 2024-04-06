@@ -36,7 +36,7 @@ bot.on('message', (msg) => {
         console.log(err)
       })
   } else if (text === '/usd') {
-    bot.sendMessage(id, `🔎🐈 Voy pa' ti, dame un chance.`)
+    bot.sendMessage(id, getResponse('bot_wait'))
 
     getUSD()
       .then((usd) => {
