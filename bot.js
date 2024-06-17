@@ -3,7 +3,7 @@ const axios = require('axios')
 const fs = require('node:fs')
 const getUSD = require('./currency')
 
-const token = '6859392847:AAFV2J6dLEhDB_HkLSle6U4YVLetc7IGwiU'
+const token = 'XXX'
 const bot = new TelegramBot(token, {polling: true})
 
 console.log('Waiting for incoming requests...')
