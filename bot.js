@@ -3,6 +3,7 @@ const axios = require('axios')
 const fs = require('node:fs')
 const getUSD = require('./currency')
 
+const token = 'XXX'
 const token = process.env.TG_API_KEY
 const bot = new TelegramBot(token, {polling: true})
 
