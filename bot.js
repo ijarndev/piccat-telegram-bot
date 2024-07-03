@@ -3,10 +3,10 @@ const axios = require('axios')
 const fs = require('node:fs')
 const getUSD = require('./currency')
 
-const token = '6859392847:AAFV2J6dLEhDB_HkLSle6U4YVLetc7IGwiU'
+const token = process.env.TG_API_KEY
 const bot = new TelegramBot(token, {polling: true})
 
-console.log('Waiting for incoming requests...')
+log('System running and waiting for incoming requests...')
 
 bot.on('message', (msg) => {
   const { id } = msg.chat
@@ -20,7 +20,7 @@ bot.on('message', (msg) => {
     fullname = msg.chat.first_name + msg.chat.last_name
   }
   
-  console.log(`[➡] incoming request from ${fullname} (${username}) | command: ${text}`)
+  log(`[I] incoming request from ${fullname} (${username}) | command: ${text}`)
 
   if(text === '/start'){
     bot.sendMessage(id, getResponse('bot_init'))
@@ -30,7 +30,7 @@ bot.on('message', (msg) => {
     axios.get('https://api.thecatapi.com/v1/images/search')
       .then((res) => {
 				bot.sendPhoto(id, res.data[0].url, { caption: getResponse('bot_image_sent') })
-        console.log(`[➡] delivering image to ${username}`)
+        log(`[O] delivering image to ${username}`)
       })
       .catch((err) => {
         console.log(err)
@@ -54,4 +54,12 @@ function getResponse(key) {
   const obj = JSON.parse(fs.readFileSync('responses.json', 'utf-8'))
 
   return obj.find((e) => e.key === key).value
+}
+
+function log (message) {  
+  console.log(message)
+  
+  fs.writeFile('./requests.log', `${message} \n`, { flag: 'a' }, (err) => {
+    if(err) console.log(err)
+  })
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --no-deprecation bot.js",
+    "bot": "node --no-deprecation bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
